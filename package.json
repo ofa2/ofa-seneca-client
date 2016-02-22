@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gongxiancao/framework-seneca-client#readme",
   "dependencies": {
+    "lodash": "^4.5.1",
     "seneca-amqp-transport": "^0.2.0"
   }
 }
