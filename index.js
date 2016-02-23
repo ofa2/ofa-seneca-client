@@ -9,10 +9,7 @@ module.exports = function (done) {
   }
 
   self.senecaClient = self.seneca
-    .use(require('seneca-amqp-transport'))
-    .client(_.merge({
-      type: 'amqp',
-      pin: 'role:api'
-    }, senecaConnection));
+    .use(senecaConnection.transport)
+    .client(senecaConnection.options);
   process.nextTick(done);
 };
