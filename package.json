@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/gongxiancao/framework-seneca-client#readme",
   "dependencies": {
-    "lodash": "^4.5.1"
+    "lodash": "4.5.0"
   }
 }
