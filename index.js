@@ -8,9 +8,11 @@ function lift (done) {
     throw new Error('unknown seneca connection:' + senecaConnectionName);
   }
 
-  self.senecaClient = self.seneca
-    .use(senecaConnection.transport)
-    .client(senecaConnection.options);
+  if(senecaConnection.transport) {
+    self.seneca.use(senecaConnection.transport);
+  }
+
+  self.senecaClient = self.seneca.client(senecaConnection.options);
   process.nextTick(done);
 }
 
