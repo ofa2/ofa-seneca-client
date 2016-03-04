@@ -12,7 +12,7 @@ function lift (done) {
     self.seneca.use(senecaConnection.transport);
   }
 
-  self.senecaClient = self.seneca.client(senecaConnection.options);
+  self.seneca.client(senecaConnection.options);
   process.nextTick(done);
 }
 
