@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var Promise = require('bluebird');
 
 function lift (done) {
   var self = this;
@@ -21,6 +22,6 @@ function lower (done) {
 }
 
 module.exports = {
-  lift: lift,
-  lower: lower
+  lift: Promise.promisify(lift),
+  lower: Promise.promisify(lower)
 };
