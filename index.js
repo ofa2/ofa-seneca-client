@@ -3,7 +3,7 @@ var Promise = require('bluebird');
 
 function lift (done) {
   var self = this;
-  var senecaConnectionName = (self.config.seneca || {}).connection;
+  var senecaConnectionName = _.merge({}, self.config.seneca, (self.config.seneca || {}).client).connection;
   var senecaConnection = self.config.connections[senecaConnectionName];
   if(senecaConnectionName && !senecaConnection) {
     throw new Error('unknown seneca connection:' + senecaConnectionName);
