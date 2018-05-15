@@ -18,13 +18,8 @@ function lift(done) {
   process.nextTick(done);
 }
 
-function lower(done) {
-  this.seneca.close(done);
-}
-
 var index = {
-  lift: Promise.promisify(lift),
-  lower: Promise.promisify(lower)
+  lift: Promise.promisify(lift)
 };
 
 export default index;

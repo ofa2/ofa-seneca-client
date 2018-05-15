@@ -18,11 +18,6 @@ function lift(done) {
   process.nextTick(done);
 }
 
-function lower(done) {
-  this.seneca.close(done);
-}
-
 export default {
   lift: Promise.promisify(lift),
-  lower: Promise.promisify(lower),
 };
